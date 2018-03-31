@@ -1,0 +1,15 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:  UNATTENDED AUTO UPDATE && UPGRADE DEBIAN SYSTEM
+# Required-Start:  $local_fs $network
+# Required-Stop:  $local_fs
+# Default-Start:  2 3 4 5
+# Default-Stop:  0 1 6
+# Short-Description: UNATTENDED AUTO UPDATE && UPGRADE DEBIAN SYSTEM
+# Description:  Unattended update and upgrade of debian system automatically
+### END INIT INFO
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+apt-get update && apt-get -y upgrade && apt-get -y autoremove && apt-get -y autoclean
+if [ -f /var/run/reboot-required ]; then
+  reboot
+fi
