@@ -18,7 +18,7 @@ To automatically reboot only at a fixed time, simply copy and run in your termin
 ```
 rm -rf /usr/share/autopdate /etc/cron.d/autopdate
 mkdir /usr/share/autopdate && cd /usr/share/autopdate
-wget https://raw.githubusercontent.com/ahrasis/autopdate/master/script2 --no-check-certificate
+wget -O autopdate https://raw.githubusercontent.com/ahrasis/autopdate/master/script2 --no-check-certificate
 wget https://raw.githubusercontent.com/ahrasis/autopdate/master/cron --no-check-certificate
 wget https://raw.githubusercontent.com/ahrasis/autopdate/master/cron2 --no-check-certificate
 chmod +x /usr/share/autopdate/autopdate
