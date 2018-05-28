@@ -7,7 +7,7 @@ This autopdate Auto Reboot When Required script reboot automatically if it finds
 # How To's (Auto Reboot When Required)
 To automatically reboot immediately when required, simply copy and run in your terminal as root user:
 ```
-rm -rf /usr/share/autopdate /etc/cron.d/autopdate
+rm -rf /usr/share/autopdate /etc/cron.d/autopdate && mkdir /usr/share/autopdate
 wget -O /usr/share/autopdate/autopdate https://raw.githubusercontent.com/ahrasis/autopdate/master/script --no-check-certificate
 wget -O /etc/cron.d/autopdate https://raw.githubusercontent.com/ahrasis/autopdate/master/cron --no-check-certificate
 chmod +x /usr/share/autopdate/autopdate
