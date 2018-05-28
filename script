@@ -11,5 +11,5 @@
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 apt-get update && apt-get -y upgrade && apt-get -y autoremove && apt-get -y autoclean
 if [ -f /var/run/reboot-required ]; then
-  reboot
+  shutdown -r now
 fi
