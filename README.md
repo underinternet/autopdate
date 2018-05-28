@@ -1,35 +1,26 @@
 # autopdate
-Auto Update is meant for Debian, Ubuntu and other similar linux OS. DO NOT MIX Auto Reboot When Required with Auto Reboot At Fixed Time as their approaches are different. Use the one that you prefer only.
+Auto Update is meant for Debian, Ubuntu and other similar linux OS.
 
-# Auto Reboot - When Required Vs At Fixed Time
-This autopdate Auto Reboot When Required script reboot automatically if it finds /var/run/reboot-required exist; while Auto Reboot At Fixed Time reboot only at the prescribed time i.e. 3.30am.
-
-# How To's (Auto Reboot When Required)
+# How To's
 To automatically reboot immediately when required, simply copy and run in your terminal as root user:
 ```
-rm -rf /usr/share/autopdate /etc/cron.d/autopdate && mkdir /usr/share/autopdate
-wget -O /usr/share/autopdate/autopdate https://raw.githubusercontent.com/ahrasis/autopdate/master/script --no-check-certificate
+rm -rf /usr/share/autopdate /etc/cron.d/autopdate
+wget -O /usr/share/autopdate https://raw.githubusercontent.com/ahrasis/autopdate/master/script --no-check-certificate
 wget -O /etc/cron.d/autopdate https://raw.githubusercontent.com/ahrasis/autopdate/master/cron --no-check-certificate
-chmod +x /usr/share/autopdate/autopdate
+chmod +x /usr/share/autopdate
 ```
 
-# How To's (Auto Reboot At Fixed Time)
-To automatically reboot only at a fixed time, simply copy and run in your terminal as root user:
+# Auto Reboot At Fixed Time?
+If you want to auto reboot only at a fixed time like 3.30am, run the following command in your terminal:
 ```
-rm -rf /usr/share/autopdate /etc/cron.d/autopdate
-mkdir /usr/share/autopdate && cd /usr/share/autopdate
-wget -O autopdate https://raw.githubusercontent.com/ahrasis/autopdate/master/script2 --no-check-certificate
-wget https://raw.githubusercontent.com/ahrasis/autopdate/master/cron --no-check-certificate
-wget https://raw.githubusercontent.com/ahrasis/autopdate/master/cron2 --no-check-certificate
-cp -a /usr/share/autopdate/cron /etc/cron.d/autopdate
-chmod +x /usr/share/autopdate/autopdate
+sed -i "s/shutdown -r now/shutdown -r 3:30/" /usr/share/autopdate
 ```
 
 # Cron Time Setting
-The time settings in the cron file is set to run autopdate at every hour at minute 40. The time to reboot is at 3.30 am if fixed time is used. Change them to suit your needs.
+The time settings in the cron file is set to run autopdate at every hour at minute 40, so do change it to suit your needs.
 
 # Log File
-A log file will be created at /var/log/autopdate which may be disabled at your choice.
+A log file will be created at /var/log/autopdate which may be disabled at your choice by editing the cron file.
 
 # License
 Feel free to modify and fork, as though it is set to BSD3, none is mentioned in the script / cron file.
