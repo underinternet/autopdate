@@ -1,3 +1,0 @@
-40 * * * * root /usr/share/autopdate/autopdate 2>&1 | while read line; do echo `/bin/date` "$line" >> /var/log/autopdate; done
-30 3 * * * root shutdown -r;
-@reboot root sleep 1 && cp -a /usr/share/autopdate/cron /etc/cron.d/autopdate;
