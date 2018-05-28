@@ -1,11 +1,8 @@
 # autopdate
 Auto Update is meant for Debian, Ubuntu and other similar linux OS. DO NOT MIX Auto Reboot When Required with Auto Reboot At Fixed Time as their approaches are different. Use the one that you prefer only.
 
-# Auto Reboot When Required
-This autopdate script reboot automatically if it finds /var/run/reboot-required exist.
-
-# Auto Reboot At Fixed Time
-This autopdate script2 reboot at a fixed time if it finds /var/run/reboot-required exist.
+# Auto Reboot - When Required Vs At Fixed Time
+This autopdate Auto Reboot When Required script reboot automatically if it finds /var/run/reboot-required exist; while Auto Reboot At Fixed Time reboot only at the prescribed time i.e. 3.30am.
 
 # How To's (Auto Reboot When Required)
 To automatically reboot immediately when required, simply copy and run in your terminal as root user:
