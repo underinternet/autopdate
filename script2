@@ -11,6 +11,5 @@
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 apt-get update && apt-get -y upgrade && apt-get -y autoremove && apt-get -y autoclean
 if [ -f /var/run/reboot-required ]; then
-	echo "30 3 * * * root shutdown -r;" >> /etc/cron.d/autopdate
-	echo "@reboot root sleep 1 && rebuild=\$(sed -e :a -e '\$d;N;2,2ba' -e 'P;D' /etc/cron.d/autopdate); echo \"\$rebuild\" > /etc/cron.d/autopdate;" >> /etc/cron.d/autopdate
+	cp -a /usr/share/autopdate/cron2 /etc/cron.d/autopdate
 fi
