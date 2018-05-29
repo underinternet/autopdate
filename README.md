@@ -1,5 +1,5 @@
 # autopdate
-Auto Update is meant for Debian, Ubuntu and other similar linux OS.
+This Auto Update script is meant for Debian, Ubuntu and other similar linux OS. Linux users that using unsimilar OS have to check what is the similar path to /var/run/reboot-required and change that accordingly.
 
 # How To's
 To automatically reboot immediately when required, simply copy and run in your terminal as root user:
