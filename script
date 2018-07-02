@@ -10,7 +10,7 @@
 ### END INIT INFO
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 dpkg --configure -a
-apt-get update && apt-get -y upgrade && apt-get -y autoremove && apt-get -y autoclean
+apt-get update && apt-get -y upgrade -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" && apt-get -y autoremove && apt-get -y autoclean
 if [ -f /var/run/reboot-required ]; then
   shutdown -r now
 fi
