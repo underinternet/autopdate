@@ -18,8 +18,9 @@ if [ $(dpkg-query -W -f='${Status}' lxd 2>/dev/null | grep -c "ok installed") -e
   apt- get -y install lxd
 fi
 # We need to configure the unfinished installation, if any
-dpkg --configure -a
-apt-get update && apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y upgrade && apt-get -y autoremove && apt-get -y autoclean
+dpkg --configure -a && apt-get install --fix-broken
+apt-get update && apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y upgrade
+apt-get -y autoremove && apt-get -y autoclean
 if [ -f /var/run/reboot-required ]; then
   shutdown -r now
 fi
