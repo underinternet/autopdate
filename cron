@@ -1,1 +1,1 @@
-40 * * * * root /usr/share/autopdate 2>&1 | while read line; do echo `/bin/date` "$line" >> /var/log/autopdate; done
+45 4 * * * root /usr/share/autopdate 2>&1 | while read line; do echo `/bin/date` "$line" >> /var/log/autopdate; done
