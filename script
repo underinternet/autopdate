@@ -8,9 +8,11 @@
 # Short-Description: UNATTENDED AUTO UPDATE && UPGRADE DEBIAN SYSTEM
 # Description:  Unattended update and upgrade of debian system automatically
 ### END INIT INFO
+
+
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Empty the logs
-> /var/log/autopdate
+# Create logs
+touch /var/log/autopdate
 # Check php7.2
 #if [ $(dpkg-query -W -f='${Status}' php7.2 2>/dev/null | grep -c "ok installed") -eq 1 ]; then
 #  apt-get -y install php7.2
