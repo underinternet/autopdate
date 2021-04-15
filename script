@@ -12,13 +12,13 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Empty the logs
 > /var/log/autopdate
 # Check php7.2
-if [ $(dpkg-query -W -f='${Status}' php7.2 2>/dev/null | grep -c "ok installed") -eq 1 ]; then
-  apt-get -y install php7.2
-fi
+#if [ $(dpkg-query -W -f='${Status}' php7.2 2>/dev/null | grep -c "ok installed") -eq 1 ]; then
+#  apt-get -y install php7.2
+#fi
 # Check lxd
-if [ $(dpkg-query -W -f='${Status}' lxd 2>/dev/null | grep -c "ok installed") -eq 1 ]; then
-  apt-get -y install lxd
-fi
+#if [ $(dpkg-query -W -f='${Status}' lxd 2>/dev/null | grep -c "ok installed") -eq 1 ]; then
+#  apt-get -y install lxd
+#fi
 # Fix boken install, if any, then update
 dpkg --configure -a && apt-get install --fix-broken && apt-get update
 # Upgrade all available updates
