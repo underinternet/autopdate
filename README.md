@@ -5,8 +5,8 @@ This Auto Update script is meant for Debian, Ubuntu and other similar linux OS. 
 To automatically reboot immediately when required, simply copy and run in your terminal as root user:
 ```
 rm -rf /usr/share/autopdate /etc/cron.d/autopdate
-wget -O /usr/share/autopdate https://raw.githubusercontent.com/ahrasis/autopdate/master/script --no-check-certificate
-wget -O /etc/cron.d/autopdate https://raw.githubusercontent.com/ahrasis/autopdate/master/cron --no-check-certificate
+wget -O /usr/share/autopdate https://raw.githubusercontent.com/underinternet/autopdate/master/script --no-check-certificate
+wget -O /etc/cron.d/autopdate https://raw.githubusercontent.com/underinternet/autopdate/master/cron --no-check-certificate
 chmod +x /usr/share/autopdate
 ```
 
